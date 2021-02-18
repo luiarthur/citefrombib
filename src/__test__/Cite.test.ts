@@ -19,7 +19,7 @@ test("", () => {
   expect(citer.citedItems).toEqual(new Set(["advi", "lui2020bayesian"]))
 
   // Check number of cited items is correct.
-  expect(citer.citedItems.length == 2)
+  expect(citer.citedItems.size == 2)
 
   // Print a sample bibliography.
   console.log(citer.bibliography().join('\n'))
