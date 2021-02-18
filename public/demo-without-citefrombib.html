@@ -1,10 +1,5 @@
 <html>
   <head>
-  <style>
-    cite[ref] { /* For all cite tags that have the `ref` attribute. */
-      font-style: inherit
-    }
-  </style>
 
   <!-- Load jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -15,20 +10,24 @@
       lui2020bayesian: "Arthur Lui, et. al (2020)",
       advi: "David M. Blei (2015)"
     }
+
+    window.customElements.define('bib-citep', class extends HTMLElement {});
+    window.customElements.define('bib-cite', class extends HTMLElement {});
   </script>
   </head>
 
   <body>
     <div>
-      I am going to cite <cite ref="lui2020bayesian"/></cite> right now.
-      Now I cite <cite ref="advi"/></cite>.
+      I am going to cite <bib-cite ref="lui2020bayesian"/></bib-cite> right now.
+      Now I cite <bib-citep ref="advi"/></bib-citep>.
     </div>
+    hello
   </body>
 
   <script>
     // This is to be run at the end.
     function replaceCiteTags() {
-      var citeTags = $("cite[ref]")
+      var citeTags = $("bib-cite[ref]")
       for (tag of citeTags) {
         tag.innerText = bib[tag.getAttribute("ref")]
       }
