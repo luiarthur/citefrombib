@@ -1,0 +1,38 @@
+<html>
+  <head>
+  <style>
+    cite[ref] { /* For all cite tags that have the `ref` attribute. */
+      font-style: inherit
+    }
+  </style>
+
+  <!-- Load jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+    // Define an object contain bibtex keys -> way to cite.
+    const bib = {
+      lui2020bayesian: "Arthur Lui, et. al (2020)",
+      advi: "David M. Blei (2015)"
+    }
+  </script>
+  </head>
+
+  <body>
+    <div>
+      I am going to cite <cite ref="lui2020bayesian"/></cite> right now.
+      Now I cite <cite ref="advi"/></cite>.
+    </div>
+  </body>
+
+  <script>
+    // This is to be run at the end.
+    function replaceCiteTags() {
+      var citeTags = $("cite[ref]")
+      for (tag of citeTags) {
+        tag.innerText = bib[tag.getAttribute("ref")]
+      }
+    }
+    replaceCiteTags()
+  </script>
+</html>
