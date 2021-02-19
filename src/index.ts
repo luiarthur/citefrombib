@@ -1,10 +1,27 @@
 import $ from 'jquery'
 import { Bib } from './Bib'
 
+// Get path to bibtex json file.
 export function getBibPath(bibattr: string="bibliography") {
   return $(`div[${bibattr}`)[0].getAttribute(bibattr)
 }
 
+/** Parse the html file using a jsonified bibtex.
+ *
+ * @param bibjsob: bibtex file contents in json format.
+ *
+ * @param tag: the tag that is used to contain the bibtex reference id.
+ * (Defaults to "param". References in HTML should be thus be called as `<param
+ * cite="myBibTexRefID">`.
+ *
+ * @param citeattr: an attribute to distinguish to denote `\cite`. Defaults to "cite".
+ *
+ * @param citepattr: an attribute to distinguish to denote `\citep`. Defaults to "citep".
+ *
+ * @param bibattr: Path to "bib.json" should be written in html at the bottom of the page as 
+ *                 <div bibliography="path/to/my/bib.json"></div>. If `bibattr` is provided, 
+ *                 then <div `provided-attr`="path/to/my/bib.json"></div>.
+ */
 export function makebib(bibjson: Object, citeattr: string="cite", citepattr:
                         string="citep", bibattr: string="bibliography",
                         tag: string="param") {

@@ -11,6 +11,7 @@ export class Bib {
     this.citedItems = new Set([])
   }
 
+  // Parse author's first and last name.
   parseAuthor(author: string) {
     let lastName = ""
     let givenName = ""
@@ -25,12 +26,13 @@ export class Bib {
     return {lastName: lastName.trim(), givenName: givenName.trim()}
   }
 
+  // Cite with parenthesis.
+  // TODO: Make this work for multiple authors.
   citep(id: string, f: () => string = () => "", add: boolean=true): string {
     return this.cite(id, true, f, add)
   }
 
   // Make an infline references (like `\cite` and `\citep` in latex).
-  // TODO: TEST THIS.
   cite(id: string, paren: boolean=false, f: () => string = () => "", add: boolean=true): string {
     let citation = ""
     const authors = this.refs[id].author.split(' and ').map(this.parseAuthor)
@@ -54,6 +56,7 @@ export class Bib {
     return citation
   }
 
+  // Generate a bibentry based on bibtex id.
   bibitem(id: string, format={}) {
     // TODO: handle the format.
     let {author, year, title, journal} = this.refs[id]
