@@ -1,9 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');  // installed via npm
+const CopyPlugin = require('copy-webpack-plugin');  // installed via npm
 const webpack = require('webpack');  // to access built-in plugins
 const path = require('path');
 
 module.exports = {
-  entry: './src/Bib.ts',
+  entry: './src/index.ts',
   output: {
     filename: 'citefrombib.min.js',
     path: path.resolve(__dirname, 'dist'),
@@ -25,5 +26,10 @@ module.exports = {
   plugins: [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({ template: './example/index.html' }),
+    // new CopyPlugin({
+    //   patterns: [
+    //     { from: "./example" },
+    //   ],
+    // }),
   ],
 };
