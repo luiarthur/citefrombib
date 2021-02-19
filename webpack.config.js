@@ -25,7 +25,7 @@ module.exports = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new HtmlWebpackPlugin({ template: './example/index.html' }),
+    new HtmlWebpackPlugin({ template: './demo/index.html' }),
     // new CopyPlugin({
     //   patterns: [
     //     { from: "./example" },

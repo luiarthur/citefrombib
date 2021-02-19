@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Slide with citefrombib</title>
+
+    <!--Reveal.js-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/simple.min.css"/>
+    <link rel="stylesheet" href="assets/css/scroll.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/monokai.min.css">
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+            # Bayesian Modeling for Heterogeneous Multivariate Data
+
+            Arthur Lui
+
+            Advisor: Juhee Lee
+
+            5 March, 2021.
+
+            ```julia
+            const x = sin(1)
+            function f(x)
+              return 2 * x
+            end
+            ```
+
+            <!--
+            \begin{eqnarray}
+              \alpha + \beta &=& 1 \\\\
+              \sin(x) + \cos(x) &=& 1 \\\\
+            \end{eqnarray}
+            -->
+          </textarea>
+        </section>
+
+        <section>
+          I am going to cite <param cite="advi"> now.
+          And again <param citep="advi">.
+        </section>
+
+        <section>
+          <li>A list item</li>
+          <li>A list item</li>
+          <li>A list item</li>
+          <li>A list item</li>
+          <li>A list item</li>
+        </section>
+
+        <!-- Import a markdown file here! -->
+        <section data-markdown="README.md">
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ### More markdown
+            1. This is inline...
+            2. This is inline...
+            3. This is inline...
+            4. This is inline...
+
+            What can we actually do about this? <param cite="advi">.
+          </textarea>
+        </section>
+
+        <section>
+          Now I will cite <param cite="lui2020bayesian">.
+          Now I will cite <param cite="ari">.
+          Now I will cite <param cite="azzalini2003distributions">.
+          Cite <param cite="barnard2000modeling">.
+          Now I will cite <param cite="lui2020bayesian">.
+          Now I will cite <param cite="ari">.
+          Now I will cite <param cite="azzalini2003distributions">.
+          Cite <param cite="barnard2000modeling">.
+          Now I will cite <param cite="lui2020bayesian">.
+          Now I will cite <param cite="ari">.
+          Now I will cite <param cite="azzalini2003distributions">.
+          Cite <param cite="barnard2000modeling">.
+        </section>
+
+        <section class="scrollable-slide bib">
+          <div class="bib" bibliography="assets/data/bib.json">
+            <p><b>References</b></p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Initialize citefrombib-->
+    <script src="assets/js/citefrombib.min.js"></script>
+
+    <!-- reveal.js plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/math/math.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.min.js"</script>
+    <script src="assets/js/scroll.js"></script>
+
+    <!-- Initialize Reveal -->
+    <script>
+      Reveal.initialize({
+        transition: 'none',
+        center: false,
+        slideNumber: true,
+        markdown: {
+          smartypants: true,
+        },
+        plugins: [ RevealMarkdown ],
+      });
+    </script>
+  </body>
+</html>
