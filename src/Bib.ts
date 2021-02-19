@@ -1,4 +1,4 @@
-export class Cite {
+export class Bib {
   // This stores a json object of all the references (from a jsonified latex
   // bib file).
   refs: Object

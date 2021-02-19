@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = {
   entry: './src/Cite.ts',
   output: {
-    filename: 'main.js',
+    filename: 'citefrombib.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
