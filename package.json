@@ -2,6 +2,7 @@
   "scripts": {
     "dev": "webpack --mode=development",
     "build": "webpack --mode=production",
+    "clean": "rm -rf dist",
     "test": "jest"
   },
   "devDependencies": {
