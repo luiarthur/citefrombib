@@ -64,7 +64,7 @@ export class Bib {
                         .map(_ => [_.givenName, _.lastName].join(' '))
     let lastAuthor = authors.splice(-1)
     let allAuthors = authors.join(', ') + ', and ' + lastAuthor[0]
-    return `${allAuthors}. ${title}. ${journal}, ${year}`
+    return `${allAuthors}. ${title}. ${journal}, ${year}.`
   }
 
   // Generate the bibliography.
