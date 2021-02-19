@@ -19,9 +19,12 @@
 }
 .reveal .slides {
     text-align: left;
-    font-size: 75%;
+    font-size: 85%;
 }
 .reveal .slides section>p {
     margin-left: 0%;
     margin-right: 0%;
+}
+code {
+  font-size: 1.3em !important;
 }

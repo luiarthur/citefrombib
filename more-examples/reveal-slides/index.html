@@ -7,8 +7,10 @@
     <!--Reveal.js-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/simple.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/tomorrow-night-eighties.min.css">
     <link rel="stylesheet" href="assets/css/scroll.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/highlight/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
 
   <body>
@@ -24,12 +26,12 @@
 
             5 March, 2021.
 
-            ```julia
+            <pre><code data-trim class="julia"># Some julia code.
             const x = sin(1)
             function f(x)
-              return 2 * x
+              return 2 * x < 1 >
             end
-            ```
+            </code></pre>
 
             <!--
             \begin{eqnarray}
@@ -55,6 +57,17 @@
 
         <!-- Import a markdown file here! -->
         <section data-markdown="README.md">
+        </section>
+
+        <section>
+            <pre><code data-trim data-noescape class="julia">
+# Some julia code.
+const x = sin(1)
+
+function f(x)
+  return 2 * 1
+end
+            </code></pre>
         </section>
 
         <section data-markdown>
@@ -108,6 +121,7 @@
         transition: 'none',
         center: false,
         slideNumber: true,
+        scroll: true,
         markdown: {
           smartypants: true,
         },
