@@ -3,9 +3,9 @@ const webpack = require('webpack'); //to access built-in plugins
 const path = require('path');
 
 module.exports = {
-  entry: './src/Cite.ts',
+  entry: './src/Bib.ts',
   output: {
-    filename: 'citefrombib.js',
+    filename: 'citefrombib.min.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -24,6 +24,6 @@ module.exports = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new HtmlWebpackPlugin({ template: './public/index.html' }),
+    new HtmlWebpackPlugin({ template: './example/index.html' }),
   ],
 };
