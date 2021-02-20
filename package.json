@@ -11,7 +11,7 @@
   "author": "Arthur Lui",
   "license": "MIT",
   "scripts": {
-    "prepare": "npm run build",  // This builds when doing `npm install citefrombib`.
+    "prepare": "npm run build",
     "serve": "lite-server --baseDir='dist'",
     "dev": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
