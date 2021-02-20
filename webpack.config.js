@@ -8,6 +8,7 @@ module.exports = {
   output: {
     filename: 'citefrombib.min.js',
     path: path.resolve(__dirname, 'dist'),
+    library: "citefrombib"
   },
   module: {
     rules: [
@@ -25,11 +26,11 @@ module.exports = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new HtmlWebpackPlugin({ template: './demo/index.html' }),
-    // new CopyPlugin({
-    //   patterns: [
-    //     { from: "./example" },
-    //   ],
-    // }),
+    // new HtmlWebpackPlugin({ template: './public/index.html' }),
+    new CopyPlugin({
+      patterns: [
+        { from: "./demo" },
+      ],
+    }),
   ],
 };

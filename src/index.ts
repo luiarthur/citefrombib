@@ -1,8 +1,22 @@
 import $ from 'jquery'
 import { Bib } from './Bib'
 
+type settingsType = {
+  citeattr: string,
+  citepattr: string,
+  bibattr: string,
+  citetag: string
+}
+
+export let defaultSettings: settingsType = {
+  citeattr: "cite",
+  citepattr: "citep",
+  bibattr: "bibliography",
+  citetag: "param"
+}
+
 // Get path to bibtex json file.
-export function getBibPath(bibattr: string="bibliography") {
+export function getBibPath(bibattr: string=defaultSettings.bibattr) {
   return $(`div[${bibattr}`)[0].getAttribute(bibattr)
 }
 
@@ -22,29 +36,34 @@ export function getBibPath(bibattr: string="bibliography") {
  *                 <div bibliography="path/to/my/bib.json"></div>. If `bibattr` is provided, 
  *                 then <div `provided-attr`="path/to/my/bib.json"></div>.
  */
-export function makebib(bibjson: Object, citeattr: string="cite", citepattr:
-                        string="citep", bibattr: string="bibliography",
-                        tag: string="param") {
+export function makebib(bibjson: Object, settings: settingsType=defaultSettings) {
+  const {citeattr, citepattr, bibattr, citetag} = settings
   const bib = new Bib(bibjson)
 
   // Parse and replace the `cite` and `citep`
   const attrs = [citeattr, citepattr]
   attrs.forEach(attr => {
-    const tags = Array.from($(`${tag}[${attr}]`))
-    tags.forEach(citetag => {
-      const ref = citetag.getAttribute(attr)
+    const tags = Array.from($(`${citetag}[${attr}]`))
+    tags.forEach(tag => {
+      const ref = tag.getAttribute(attr)
       const citeItem = attr == citeattr? bib.cite(ref) : bib.citep(ref)
-      $(`${tag}[${attr}='${ref}']`).replaceWith(`<a ref="${ref}"> ${citeItem} </a>`)
+      $(`${citetag}[${attr}='${ref}']`).replaceWith(`<a class="citation" ref="${ref}"> ${citeItem} </a>`)
     })
   })
+  console.log(`Replaced <${citetag}> with citation.`)
 
   // Replace bibliography
-  console.log("Replacing bibliography.")
   const bibtag = $(`div[${bibattr}]`)
   bib.bibliography().forEach(item => {
     bibtag.append(`<p> ${item} </p>`)
   })
+  console.log(`Replaced ${bibattr}.`)
+}
+
+export function make(bibPath: string=getBibPath(), settings: settingsType=defaultSettings) {
+  $.getJSON(bibPath, data => makebib(data, settings))
+  console.log(`Got ${bibPath}!`)
 }
 
 // Run this on load.
-$(() => $.getJSON(getBibPath(), data => makebib(data)))
+// $(() => make())
