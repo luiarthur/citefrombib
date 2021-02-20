@@ -5,7 +5,8 @@
 
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@300,400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300,400;700&display=swap" rel="stylesheet">
 
   <!------ styles ------->
   <!-- custom -->
@@ -15,7 +16,7 @@
 
 </head>
 <body>
-  <div class="slide-deck hint"> 
+  <div class="slide-deck">  <!-- when developing, add class="hint" to see box around .slide-deck-->
     <section>
       <h1 class="title-slide">Bayesian Modeling for Heterogeneous Multivariate Data</h1>
       <br>
@@ -23,7 +24,14 @@
       <br>
       Advisor: Juhee Lee
       <br>
+      5 March, 2021
+
+      <br><br>
+      <small>
       Department of Statistics
+      <br>
+      UC Santa Cruz
+      </small>
     </section> 
 
     <section>
@@ -68,8 +76,8 @@
       <h1>Math</h1>
       $$
       \begin{aligned}
-      \int_{0}^\infty f(x) dx &=& 1 \\
-      \alpha &\sim& \text{Normal}(0, 1)
+      \int_{0}^\infty f(x) dx &= 1 \\
+      \alpha &\sim \text{Normal}(0, 1)
       \end{aligned}
       $$
     </section>
@@ -98,37 +106,12 @@
     </div>
   </div>
 
-  <!------------------ scripts ----------------------------------->
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <!-- citefrombib -->
-  <script src="assets/js/citefrombib.min.js"></script>
-  <script>citefrombib.make()</script>
-  <!-- pager -->
+  <!-- Load all js scripts -->
   <script type="module" src="assets/js/index.js"></script>
-  <!-- KaTeX -->
-  <!-- The loading of KaTeX is deferred to speed up page rendering -->
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
-  <!-- To automatically render math in text elements, include the auto-render extension: -->
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-      onload="renderMathInElement(document.body);"></script>
-  <script>
-  $(document).ready(function () { // this need jquery
-    renderMathInElement(document.body, {
-      // ...options...
-      delimiters: [
-        { left: "$$", right: "$$", display: true },
-        { left: "$", right: "$", display: false },
-        { left: "\\[", right: "\\]", display: true }
-      ]
-    });
-  });
-  </script>
 </body>
 </html>
 
 <!-- TODO: 
-  - Mathjax / katex
   - code syntax highlight
   - Handle printing. 
   - set a url parameter?

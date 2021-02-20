@@ -1,3 +1,4 @@
+// A slider for slide transitions.
 export class Slider {
   constructor(currentPage=1) {
     this.currentPage = currentPage
@@ -8,6 +9,13 @@ export class Slider {
     makePager()
     this.setVisibility()
     this.verbose = false 
+    this.setSectionId()
+  }
+
+  setSectionId() {
+    for (let i = 0; i < this.realTotalPages; i++) {
+      $("section").eq(i).attr('id', i)
+    }
   }
 
   increment() {
