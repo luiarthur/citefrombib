@@ -46,3 +46,6 @@ section {
 figcaption {
   font-size: 3vw;
 }
+section li {
+  margin-bottom: 3vw;
+}
