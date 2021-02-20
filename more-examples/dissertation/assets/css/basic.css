@@ -19,7 +19,8 @@ section>h1.title-slide {
 }
 section>h1,h2,h3,h4,h5,h6 {
   margin-top:0;
-  font-weight: 300;
+  font-weight: 500;
+  font-family: 'News Cycle', sans-serif;
 }
 .slide-deck section {
   line-height: 1.2;
