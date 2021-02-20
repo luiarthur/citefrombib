@@ -8,7 +8,8 @@ module.exports = {
   output: {
     filename: 'citefrombib.min.js',
     path: path.resolve(__dirname, 'dist'),
-    library: "citefrombib"
+    library: "citefrombib",
+    libraryTarget: "umd"
   },
   module: {
     rules: [
