@@ -4,8 +4,10 @@ import './citefrombib.min.js'
 import "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
 import "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
 
-// Initialize the slider.
-const slider = new Slider()
+// Initialize the slider. If an id is provided, then use that as starting page.
+const initPageIdGetter = window.location.href.split('#')
+const firstPage = initPageIdGetter.length > 1 ? initPageIdGetter[1]*1 : 1
+const slider = new Slider(firstPage)
 
 // This handles slide navigation.
 $(document).on("keydown", function (e) {

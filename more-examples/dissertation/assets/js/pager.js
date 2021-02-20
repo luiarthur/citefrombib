@@ -58,6 +58,9 @@ export function handleDirection(e, slider) {
   } else if (rightKeys.includes(e.which)) {
     slider.increment()
   }
+
+  // Set query string
+  window.location.href = window.location.href.split('#')[0] + "#" + slider.currentPage
 }
 
 // Page counter.
