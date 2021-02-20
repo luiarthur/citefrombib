@@ -17,7 +17,7 @@
 
 </head>
 <body>
-  <div class="slide-deck">  <!-- when developing, add class="hint" to see box around .slide-deck-->
+  <div class="slide-deck hint">  <!-- when developing, add class="hint" to see box around .slide-deck-->
     <!-- TITLE SLIDE -->
     <section>
       <h1 class="title-slide">Bayesian Modeling for Heterogeneous Multivariate Data</h1>
@@ -50,7 +50,7 @@
 
     <section>
       <h1>Cytometry at time-of-flight (CyTOF) </h1>
-      <ul>
+      <ul class="far">
         <li> Commercialized in 2009 </li>
         <li> Makes use of time-of-flight spectrometry to accelerate, separate,
           and identify ions by mass</li>
@@ -63,7 +63,7 @@
 
     <section>
       <h1>Natural Killer Cells </h1>
-      <ul>
+      <ul class="far">
         <li> Natural Killer cells play a critical role in cancer
           immunosurveillance. </li>
         <li> NK cell diversity affects antiviral response. </li>
@@ -79,44 +79,21 @@
     </section>
 
     <section>
-      <table>
-        <tr>
-          <td></td> <td>2B4</td> <td>2DL1</td> <td>2DL3</td> <td>2DS4</td>
-          <td>3DL1</td> <td>CCR7</td> <td>$\cdots$</td>
-        </tr>
-        <tr>
-          <td>1</td> <td>47.60</td> <td>0.00</td> <td>30.90</td>
-          <td>1.35</td> <td>82.49</td> <td>0.00</td> <td>$\cdots$</td>
-        </tr>
-        <tr>
-          <td>2</td> <td>81.84</td> <td>0.44</td> <td>0.88</td>
-          <td>0.51</td> <td>176.99</td> <td>2.38</td> <td>$\cdots$</td>
-        </tr>
-        <tr>
-          <td>3</td> <td>13.33</td> <td>0.00</td> <td>0.00</td>
-          <td>0.00</td> <td>0.00</td> <td>8.81</td> <td>$\cdots$</td>
-        </tr>
-        <tr>
-          <td>4</td> <td>23.64</td> <td>3.37</td> <td>43.39</td>
-          <td>0.27</td> <td>0.73</td> <td>0.00</td> <td>$\cdots$</td>
-        </tr>
-        <tr>
-          <td>5</td> <td>156.19</td> <td>0.00</td> <td>9.04</td>
-          <td>0.00</td> <td>0.00</td> <td>11.43</td> <td>$\cdots$</td>
-        </tr>
-        <tr>
-          <td>6</td> <td>273.86</td> <td>0.00</td> <td>9.71</td>
-          <td>2.41</td> <td>0.84</td> <td>0.52</td> <td>$\cdots$</td>
-        </tr>
-        <tr>
-          <td>$\vdots$</td> <td>$\vdots$</td> <td>$\vdots$</td> <td>$\vdots$</td>
-          <td>$\vdots$</td> <td>$\vdots$</td> <td>$\vdots$</td> <td></td>
-        </tr>
-        <tr>
-          <td>Cutoff</td> <td>7.62</td> <td>6.07</td> <td>13.60</td>
-          <td>3.79</td> <td>15.50</td> <td>9.52</td> <td>$\cdots$</td>
-        </tr>
-      </table>
+      <figure class="center" style="width:70%">
+        <img src="assets/img/fam/cb-data.png" style="width:100%">
+        <figcaption>Cord-blood sample marker expression levels for 6 of 32
+          NK-cell markers (columns), and 6 of 41474 cells (rows). Last row
+          contains cutoff values returned by CyTOF instrument.</figcaption>
+      </figure>
+      <ul class="med">
+        <li>Data missing not at random</li>
+        <ul>
+          <li>Some markers contain up to 85% missing values</li>
+        </ul>
+        <li>
+          Cutoff values are computed after measurement
+        </li>
+      </ul>
     </section>
 
 
