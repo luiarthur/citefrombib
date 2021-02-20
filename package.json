@@ -1,7 +1,7 @@
 {
   "name": "citefrombib",
-  "version": "0.4.0",
-  "main": "index.ts",
+  "version": "0.5.0",
+  "main": "src/index.ts",
   "description": "Creates bibtex-like bibliographies.",
   "scripts": {
     "serve": "lite-server --baseDir='dist'",
