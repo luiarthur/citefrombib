@@ -1,4 +1,8 @@
 {
+  "name": "citefrombib",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "description": "Creates bibtex-like bibliographies.",
   "scripts": {
     "serve": "lite-server --baseDir='dist'",
     "dev": "webpack --mode=development --watch",
