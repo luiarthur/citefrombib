@@ -1,8 +1,15 @@
 {
   "name": "citefrombib",
-  "version": "0.5.0",
-  "main": "src/index.ts",
+  "version": "0.5.1",
+  "main": "dist/citefrombib.min.js",
+  "files": ["dist/citefrombib.min.js"],
   "description": "Creates bibtex-like bibliographies.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luiarthur/citefrombib.git"
+  },
+  "author": "Arthur Lui",
+  "license": "MIT",
   "scripts": {
     "serve": "lite-server --baseDir='dist'",
     "dev": "webpack --mode=development --watch",
